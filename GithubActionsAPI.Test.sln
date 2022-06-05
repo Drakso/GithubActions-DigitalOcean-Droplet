@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GithubActionsAPI.Test", "GithubActionsAPI.Test\GithubActionsAPI.Test.csproj", "{24A64AFE-9FA7-430A-9969-492353D30429}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GithunActionsAPI.Test.Tests", "GithunActionsAPI.Test.Tests\GithunActionsAPI.Test.Tests.csproj", "{F862778C-B4F0-4140-894C-D6FD7D5AF470}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{24A64AFE-9FA7-430A-9969-492353D30429}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{24A64AFE-9FA7-430A-9969-492353D30429}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{24A64AFE-9FA7-430A-9969-492353D30429}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F862778C-B4F0-4140-894C-D6FD7D5AF470}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F862778C-B4F0-4140-894C-D6FD7D5AF470}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F862778C-B4F0-4140-894C-D6FD7D5AF470}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F862778C-B4F0-4140-894C-D6FD7D5AF470}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
