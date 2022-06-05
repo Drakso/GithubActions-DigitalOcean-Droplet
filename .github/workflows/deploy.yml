@@ -16,7 +16,7 @@ jobs:
     environment: production
     steps:
     - name: Publish
-      run: dotnet publish GithubActionsAPI.Test/GithubActionsAPI.Test.csproj -c Release -o website
+      run: dotnet publish GithubActionsAPI.Test.csproj -c Release -o website
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2.2.2
       with:
