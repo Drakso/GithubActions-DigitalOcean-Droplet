@@ -15,12 +15,17 @@ jobs:
     runs-on: ubuntu-latest
     environment: production
     steps:
-      - name: dotnet publish
-        run: |
-          dotnet publish GithubActionsAPI.Test.sln -c Release -o GithubActionsAPI.Test
-      - name: Install doctl
-        uses: digitalocean/action-doctl@v2
-        with:
-          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
-      - name: deploy to digital ocean
-        run: doctl apps create-deployment dotnetwebapp
+    - name: Publish
+      run: dotnet publish GithubActionsAPI.Test/GithubActionsAPI.Test.csproj -c Release -o website
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v2.2.2
+      with:
+        name: website
+        path: SimpleFeedReader/website/**
+        if-no-files-found: error
+    - name: Install doctl
+      uses: digitalocean/action-doctl@v2
+      with:
+        token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+    - name: deploy to digital ocean
+      run: doctl apps create-deployment website
