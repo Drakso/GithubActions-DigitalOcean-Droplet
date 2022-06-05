@@ -17,7 +17,7 @@ jobs:
     steps:
       - name: dotnet publish
         run: |
-          dotnet publish GithubActionsAPI.Test.sln -c Release -o dotnetwebapp
+          dotnet publish GithubActionsAPI.Test.sln -c Release -o GithubActionsAPI.Test
       - name: Install doctl
         uses: digitalocean/action-doctl@v2
         with:
