@@ -16,8 +16,9 @@ jobs:
     environment: production
     steps:
       - name: dotnet publish
+        working-directory: src/GithubActionsAPI.Test
         run: |
-          dotnet publish -c Release -o GithubActionsAPI.Test
+          dotnet publish -c Release -o dotnetwebapp
       - name: Install doctl
         uses: digitalocean/action-doctl@v2
         with:
