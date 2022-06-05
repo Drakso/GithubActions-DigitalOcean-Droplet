@@ -1,0 +1,26 @@
+name: DeployToDigitalOceanDroplet
+
+concurrency: production
+
+on:
+  workflow_run:
+    workflows: ["dotnet.build"]
+    branches: [main]
+    types:
+      - completed
+
+jobs:
+  deployment:
+  
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: dotnet publish
+        run: |
+          dotnet publish -c Release -o dotnetwebapp
+      - name: Install doctl
+        uses: digitalocean/action-doctl@v2
+        with:
+          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+      - name: deploy to digital ocean
+        run: doctl apps create-deployment dotnetwebapp
